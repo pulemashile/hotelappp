@@ -94,3 +94,17 @@ body{
   
 
 }
+.card {
+  border: 1px solid #e0e0e0; /* Light border color */
+  border-radius: 0.5rem; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: transform 0.3s; /* Smooth hover effect */
+}
+
+.card:hover {
+  transform: scale(1.05); /* Slightly enlarge the card on hover */
+}
+
+.card-img-top {
+  border-radius: 0.5rem 0.5rem 0 0; /* Rounded corners for the top image */
+}
