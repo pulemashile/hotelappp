@@ -12,7 +12,7 @@ function index() {
       <div className='img'>
         <Navbar />
         <div className="hero-section">\
-          <h2 className='text-sm bg-[#9E6527] text-center mx-[50rem] mt-[26dvh] '>welcome to our royalty hotel</h2>
+          <h2 className='text-sm bg-[#9E6528] text-center mx-[50rem] mt-[26dvh] '>welcome to our royalty hotel</h2>
           <h1 className='text-2xl text-center pt-1 text-white font-bold'>Home away from home,come as stranger leave as a friend</h1>
 
           {/* Hero section content can go here if needed */}
