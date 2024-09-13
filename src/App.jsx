@@ -4,6 +4,8 @@ import Index from './index';
 import Loginpage from './/components/Loginpage';
 import RegistrationPage from './/components/Signuppage';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Reviews from './Reviews';
+import Rooms from './components/Rooms';
 
 function App() {
   return (
@@ -15,6 +17,9 @@ function App() {
           <Route path="/register" element={<RegistrationPage />} />
 
           <Route path="/add" element={<Index />} />
+          <Route path="/Reviews" element={<Reviews />} />
+          <Route path="/rooms" element={<Rooms />} />
+          
 
           
                   

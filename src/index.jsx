@@ -4,6 +4,7 @@ import './App.css';
 import download from "./assets/Modern Bedroom Interior.jpg"
 import 'bootstrap'
 import dom from "./assets/Modern Luxurious Bedroom.jpg"
+import { Link } from 'react-router-dom';
 
 function index() {
   return (
@@ -37,9 +38,11 @@ function index() {
         </div>
       </div>
       
-      <div className='brown'>
-      <button className='btn '>veiw rooms</button>
+      <div className='brown'><Link to="/rooms">
+      <button className='text-center ml-[95dvh]'>veiw rooms</button>
 
+      </Link >
+     
         <div className="rectangle2">
           <img src={download} alt="Bedroom Interior" />
         </div>
@@ -68,7 +71,8 @@ function index() {
             <img src={dom} className="card-img-top" style={{width: "20rem"}} alt="Bedroom" />
             <div className="card-body">
               <h5 className="card-title">Card title</h5>
-              <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <p className="card-text">Some quick example text to build on 
+                the card title and make up the bulk of the card's content.</p>
               <button className="btn btn-primary bg-danger border-0">Go somewhere</button>
 
             </div>
