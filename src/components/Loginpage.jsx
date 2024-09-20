@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { login } from './Authslice';
-import { useNavigate } from 'react-router-dom';
+
+import { Link, useNavigate } from 'react-router-dom';
 import doms from "../assets/frame 5.png"
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import {auth} from '../config/firebase'
+
 
 
 function LoginPage() {
@@ -13,16 +16,20 @@ function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Add your authentication logic here
-    if (email && password) {
-      // Example user info (replace with actual user data)
-      const user = { email };
-      dispatch(login(user));
-      navigate('/add'); // Navigate to the desired route on successful login
-    } else {
-      alert('Please enter both email and password');
+    try {
+      if (email && password) {
+        await signInWithEmailAndPassword(auth, email, password);
+        alert('signin successful');
+        navigate('/add');
+       
+      } else {
+        alert('Please enter the correct  email and password');
+      }
+    } catch (error) {
+      console.error(error.message);
+      alert('signin failed. Please try again.');
     }
   };
 
@@ -69,13 +76,13 @@ function LoginPage() {
                       <label className="text-base font-medium text-gray-900">
                         Password
                       </label>
-                      <a
-                        href="#"
-                        title=""
+                      <Link
+                        to="/Reset"
+                       
                         className="text-sm font-medium text-blue-600 hover:underline hover:text-blue-700 focus:text-blue-700"
                       >
                         Forgot password?
-                      </a>
+                      </Link>
                     </div>
                     <div className="mt-2.5">
                       <input

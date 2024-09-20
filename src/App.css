@@ -30,12 +30,21 @@ a{
   list-style: none;
 }
 
-.btn{
+.btnn{
   background-color: bisque;
   border: 2px solid;
   padding: 5px;
-  border-radius:5px ;
+  border-radius: 50% ;
+  width: 60px;
+  height: 60px;
 }
+.btn img
+{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
 .hero-section{
   background: url('https://assets.lummi.ai/assets/QmWac8keANEFsA6iGvMDsFQKDxXpmFxREuTTFX4Q7q72vM?auto=format&w=1500'
   );

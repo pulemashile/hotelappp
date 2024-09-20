@@ -1,29 +1,37 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { auth } from '../config/firebase.js';
+import { createUserWithEmailAndPassword,signOut } from 'firebase/auth';
 
-const initialState = {
-  isAuthenticated: false,
-  user: null,
-};
-
-const authSlice = createSlice({
-  name: 'auth',
-  initialState,
-  reducers: {
-    login: (state, action) => {
-      state.isAuthenticated = true;
-      state.user = action.payload;
-    },
-    logout: (state) => {
-      state.isAuthenticated = false;
-      state.user = null;
-    },
-    register: (state, action) => {
-      state.isAuthenticated = true;
-      state.user = action.payload;
-    },
+export const authSlice = createSlice({
+  name: "auth",
+  initialState: {
+    user: {
+      email: "",
+      password: ""
+    }
   },
+  reducers: {
+    signUp: (state, action) => {
+      const { email, password } = action.payload; // Destructure email and password from payload
+      
+      // Firebase call for sign-up
+      createUserWithEmailAndPassword(auth, email, password)
+        .then(() => {
+          alert("Registered successfully");
+        })
+        .catch((error) => {
+          console.log(error.message);
+        });
+    },
+      signingOut:()=>{
+        signOut(auth).then(()=>{
+          return true
+        })
+          .catch((error)=>{});
+
+      }
+  }
 });
 
-export const { login, logout, register } = authSlice.actions;
-
+export const { signUp,signingOut } = authSlice.actions;
 export default authSlice.reducer;

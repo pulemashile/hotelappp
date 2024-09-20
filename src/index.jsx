@@ -5,8 +5,23 @@ import download from "./assets/Modern Bedroom Interior.jpg"
 import 'bootstrap'
 import dom from "./assets/Modern Luxurious Bedroom.jpg"
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { signingOut } from './components/Authslice';
+import { useNavigate } from 'react-router-dom';
+
 
 function index() {
+  const navigate=useNavigate()
+
+  
+const dispatch = useDispatch();
+
+const handleSignOut = () => {
+  dispatch(signingOut());
+  navigate('/');
+};
+
+
   return (
     <div className="App">
       <div className='img'>
@@ -79,7 +94,7 @@ function index() {
             <div></div>
             
           </div>
-          
+          <button onClick={handleSignOut}>sign out</button>
         </div>
         
       </div>

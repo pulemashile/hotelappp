@@ -15,8 +15,13 @@ function Navbar() { // Capitalized component name
         <li>
           <Link to="/reviews">Reviews</Link> {/* Add text inside Link */}
         </li>
+
         <Link to ="/register">
-        <button className='btn'>Sign Up</button>
+        <button className='btnn'>
+          {/* Sign Up */}
+          <img src='https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2151106393.jpg?w=826&t=st=1726491606~exp=1726492206~hmac=8831018d76164e30d8b2bee719028d97640521e881d1cd92f469890f6f53f7fa'></img>
+
+        </button>
         </Link>
        
       </ul>
