@@ -36,14 +36,22 @@ function BookingPage() {
   return (
     <div>
       <h1 className='text-6xl text-center pb-3'>Book a Room</h1>
+      <h1 className='text-xl text[#FF8A8A] mt-4 '>✨ Escape to comfort and luxury! 🌟 Whether you're planning a relaxing getaway or a thrilling adventure, 
+        our rooms are designed to make you feel right at home. Enjoy stunning views,<br></br> modern amenities, and a warm atmosphere that will leave you refreshed and recharged.<br></br> Don’t wait—your perfect retreat is just a click away! Book now and create unforgettable memories! 🛏️💖
+
+
+
+</h1>
       <div className='flex flex-wrap justify-center'>
         {rooms.map((room, index) => (
           <div key={index} className="card p-4 mx-3" style={{ width: "23rem", height: "30rem", marginTop: "10rem" }}>
             <img src={room.img} className="card-img-top" style={{ width: "20rem", height: "15rem" }} alt={room.title} />
             <div className="card-body">
-              <h5 className="card-title">{room.title}</h5>
+
+
+              <h5 className="card-title"  style={{ fontSize: "1.5 rem", fontWeight: "bold", color: "#ff6347", marginBottom: "1rem" }}>{room.title}</h5>
               <p className="card-text">Price: R {room.price}</p>
-              <button className="btn btn-primary bg-[#ddb892] border-0" onClick={() => handleBooking(room)}>Book</button>
+              <button className="btn btn-primary bg-[#ddb892] border-0 mt-4" onClick={() => handleBooking(room)}>Book</button>
             </div>
           </div>
         ))}

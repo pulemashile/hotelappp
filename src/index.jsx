@@ -3,11 +3,16 @@ import Navbar from './Navbar';
 import './App.css';
 import download from "./assets/Modern Bedroom Interior.jpg"
 import 'bootstrap'
-import dom from "./assets/Modern Luxurious Bedroom.jpg"
+import dom from "./assets/Modern Luxurious Bedroom.jpg";
+import hey from './assets/Rectangle 6 (1).png';
+import cake from './assets/Rectangle 6 (2).png';
+import  two from './assets/Rectangle 6.png';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { signingOut } from './components/Authslice';
 import { useNavigate } from 'react-router-dom';
+import { RiPencilLine, RiLogoutCircleLine } from '@remixicon/react';
+
 
 
 function index() {
@@ -39,22 +44,23 @@ const handleSignOut = () => {
             <h2 className='text-black'>Arrival Date</h2>
             </div>
             <div className='box2'>
-            <h1 className='text-black'>check in</h1>
+            <h1 className='text-black'>check out</h1>
             <br></br>
             <h2 className='text-black'>Arrival Date</h2>
             </div>
-            <div className='box3'> <h1 className='text-black'>check in</h1>
+            <div className='box3'> <h1 className='text-black'>adults</h1>
             <br></br>
-            <h2 className='text-black'>Arrival Date</h2>
+            <h2 className='text-black'>Adults</h2>
         
         </div>
             <div className='box4'> <button className='text-black text-center mt-8'>book</button></div>
           </div>
+          <div className='mt-2 font-sans'>check in:after 2pm & checkout: before 12pm</div>
         </div>
       </div>
       
       <div className='brown'><Link to="/rooms">
-      <button className='text-center ml-[95dvh]'>veiw rooms</button>
+      <button className='text-center ml-[95dvh] border-spacing-4 bg-white'>veiw rooms</button>
 
       </Link >
      
@@ -65,46 +71,54 @@ const handleSignOut = () => {
         {/* Flex container for the cards */}
         <div className="d-flex justify-content-center flex-wrap">
           <div className="card p-4 mx-3" style={{width: "23rem", height: "30rem", marginTop: "16rem"}}>
-            <img src={dom} className="card-img-top" style={{width: "20rem"}} alt="Bedroom" />
+            <img src={hey} className="card-img-top" style={{width: "20rem"}} alt="Bedroom" />
             <div className="card-body">
-              <h5 className="card-title">Card title</h5>
-              <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <button className="btn btn-primary bg-danger border-0">Go somewhere</button>
+             <h2 className="card-title" style={{ fontSize: "2rem", fontWeight: "bold", color: "#ff6347", textAlign: "center", marginBottom: "1rem" }}>
+             Junior Suite
+</h2>
+
+              
+              <p className="card-text">Our Junior Suite offers a perfect blend of comfort and style, featuring a spacious layout with a cozy sitting area.
+                 Ideal for both leisure and business travelers, it includes modern amenities and a charming kitchenette for your </p>
+              
+            </div>
+          </div>
+
+          <div className="card p-4 mx-3" style={{width: "23rem", height: "30rem", marginTop: "16rem"}}>
+            <img src={two} className="card-img-top" style={{width: "20rem"}} alt="Bedroom" />
+            <div className="card-body">
+            <h2 className="card-title" style={{ fontSize: "2rem", fontWeight: "bold", color: "#ff6347", textAlign: "center", marginBottom: "1rem" }}>
+ Presidential suite
+</h2>
+              <p className="card-text">Indulge in the epitome of luxury in our Presidential Suite. With elegant furnishings, stunning views,
+                 and multiple rooms, this suite is the perfect choice for those who seek an extraordinary experience during their stay.</p>
+              
             </div>
           </div>
 
           <div className="card p-4 mx-3" style={{width: "23rem", height: "30rem", marginTop: "16rem"}}>
             <img src={dom} className="card-img-top" style={{width: "20rem"}} alt="Bedroom" />
             <div className="card-body">
-              <h5 className="card-title">Card title</h5>
-              <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <button className="btn btn-primary bg-danger border-0">Go somewhere</button>
-            </div>
-          </div>
+            <h2 className="card-title" style={{ fontSize: "2rem", fontWeight: "bold", color: "#ff6347", textAlign: "center", marginBottom: "1rem" }}>
+  Honeymoon
+</h2>
 
-          <div className="card p-4 mx-3" style={{width: "23rem", height: "30rem", marginTop: "16rem"}}>
-            <img src={dom} className="card-img-top" style={{width: "20rem"}} alt="Bedroom" />
-            <div className="card-body">
-              <h5 className="card-title">Card title</h5>
-              <p className="card-text">Some quick example text to build on 
-                the card title and make up the bulk of the card's content.</p>
-              <button className="btn btn-primary bg-danger border-0">Go somewhere</button>
+              <p className="card-text">Celebrate your love in our enchanting Honeymoon Suite, complete with luxurious amenities and a romantic ambiance. 
+                Relax in a private jacuzzi and create unforgettable memories in a setting designed</p>
+                
 
             </div>
             <div></div>
             
           </div>
-          <button onClick={handleSignOut}>sign out</button>
+          
         </div>
+        <button onClick={handleSignOut}><RiLogoutCircleLine></RiLogoutCircleLine></button>
+   
         
       </div>
-      <div className="flex justify-center gap-6 mt-[25dvh] mr-[50dvh]">
-          <img src={dom} style={{width: "20rem", height: "20rem"}} alt="Bedroom" />
-          <img src={dom} style={{width: "20rem", height: "20rem"}} alt="Bedroom" />
-          <img src={dom} style={{width: "20rem", height: "20rem"}} alt="Bedroom" />
-          <img src={dom} style={{width: "20rem", height: "20rem"}} alt="Bedroom" />
+      
 
-        </div>
     </div>
   );
 }

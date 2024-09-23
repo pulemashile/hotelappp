@@ -3,6 +3,9 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchBookedRoomsFromFirestore } from '../components/data';
+import {Avatar} from "@nextui-org/avatar";
+
+
 
 import AreaChart from './AreaChart';
 import LineGraph from './AreaChart';
@@ -72,9 +75,17 @@ function BookedRooms() {
             </div>
             <div className='pt-8'>
       <h1 className='mt-8'>My Company Performance Chart</h1>
-      <LineGraph />
+      {/* <LineGraph /> */}  <div className="flex gap-3 items-center">
+      <Avatar src="https://i.pravatar.cc/150?u=a042581f4e29026024d" />
+      <Avatar name="Junior" />
+      <Avatar src="https://i.pravatar.cc/150?u=a042581f4e29026704d" />
+      <Avatar name="Jane" />
+      <Avatar src="https://i.pravatar.cc/150?u=a04258114e29026702d" />
+      <Avatar name="Joe" />
+    </div>
     </div>
             </div>
+
            
 
 
