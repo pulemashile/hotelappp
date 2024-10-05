@@ -1,8 +1,20 @@
-# React + Vite
+this is my hotelapp  it has crud functions for deleting ,updating and adding rooms in the admin panel and also 
+and a method for booking rooms and users can login ,register still needs a bit on update on the ui and who can access the booked rooms because not all users should see the route to booked rooms to be continued
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+run locally
 
-Currently, two official plugins are available:
+clone the project
+git clone https://github.com/pulemashile/hotelappp.git
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+go to the project directory
+cd hotelappp
+
+install dependencies
+
+npm install
+
+start the react vite react server
+
+npm run dev
+
+then go to the server s directory
