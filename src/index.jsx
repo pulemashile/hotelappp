@@ -17,6 +17,7 @@ import { useDispatch } from 'react-redux';
 import { signingOut } from './components/Authslice';
 import { useNavigate } from 'react-router-dom';
 import PayPalButton from './components/PayPalButton';
+import TailwindCard from './components/TailwindCard';
 
 
 function Index() {
@@ -145,65 +146,14 @@ function Index() {
           </Link>
         </div>
 
-        {/* Rooms Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          {/* Card 1: Junior Suite */}
-          <div className="bg-white shadow-md rounded-lg overflow-hidden relative">
-            <div className="absolute top-2 left-2">
-              <button className="bg-primary text-white p-2 rounded-full hover:bg-primary/80">
-                <RiHeartLine className="text-xl" />
-              </button>
-            </div>
-            <img src={hey} className="rounded-lg h-72 object-cover" alt="Junior Suite" />
-            <div className="p-4">
-              <h2 className="text-xl font-semibold text-primary mb-4 text-center">Junior Suite</h2>
-              <p className="text-muted-foreground text-center">Our Junior Suite offers a perfect blend of comfort and style. Ideal for both leisure and business travelers.</p>
-            </div>
-            <div className="text-center pb-4">
-              <button className="bg-secondary text-secondary-foreground px-4 py-2 rounded-md hover:bg-secondary/80">
-                Share
-              </button>
-            </div>
-          </div>
-
-          {/* Card 2: Presidential Suite */}
-          <div className="bg-white shadow-md rounded-lg overflow-hidden relative">
-            <div className="absolute top-2 left-2">
-              <button className="bg-primary text-white p-2 rounded-full hover:bg-primary/80">
-                <RiHeartLine className="text-xl" />
-              </button>
-            </div>
-            <img src={two} className="rounded-lg h-72 object-cover" alt="Presidential Suite" />
-            <div className="p-4">
-              <h2 className="text-xl font-semibold text-primary mb-4 text-center">Presidential Suite</h2>
-              <p className="text-muted-foreground text-center">Indulge in the epitome of luxury with stunning views and multiple rooms. Perfect for those who seek an extraordinary experience.</p>
-            </div>
-            <div className="text-center pb-4">
-              <button className="bg-secondary text-secondary-foreground px-4 py-2 rounded-md hover:bg-secondary/80">
-                Share
-              </button>
-            </div>
-          </div>
-
-          {/* Card 3: Honeymoon Suite */}
-          <div className="bg-white shadow-md rounded-lg overflow-hidden relative">
-            <div className="absolute top-2 left-2">
-              <button className="bg-primary text-white p-2 rounded-full hover:bg-primary/80">
-                <RiHeartLine className="text-xl" />
-              </button>
-            </div>
-            <img src={dom} className="rounded-lg h-72 object-cover" alt="Honeymoon Suite" />
-            <div className="p-4">
-              <h2 className="text-xl font-semibold text-primary mb-4 text-center">Honeymoon Suite</h2>
-              <p className="text-muted-foreground text-center">Celebrate your love in our Honeymoon Suite with luxurious amenities, a romantic ambiance, and a private jacuzzi.</p>
-            </div>
-            <div className="text-center pb-4">
-              <button className="bg-secondary text-secondary-foreground px-4 py-2 rounded-md hover:bg-secondary/80">
-                Share
-              </button>
-            </div>
-          </div>
+        {/* Rooms Grid */}<div className='grid grid-cols-4 gap-4'>
+        <TailwindCard />
+        <TailwindCard />
+        <TailwindCard />
+        <TailwindCard />
+        
         </div>
+        
       </section>
 
       {/* Logout Button */}
