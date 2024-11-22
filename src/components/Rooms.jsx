@@ -1,38 +1,52 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { addBookingToFirestore } from '../components/firestorereducers';
-import PayPalButton from '../components/PayPalButton';
-import dom from "../assets/Modern Luxurious Bedroom.jpg";
-import bed1 from '../assets/Contemporary Elegance_ Serene Earth-Toned Bedroom.jpeg';
-import bed2 from "../assets/Tranquil Elegance_ Curved Archways and Muted Green Hues.jpeg";
-import bed3 from '../assets/Sunset Serenity at the Tropical Beachfront Lounge (1).jpeg';
-import bed4 from '../assets/Luxurious Oceanview Interior at Sunset.jpeg';
-import bed5 from '../assets/Modern Bedroom Interior.jpeg';
-import bed6 from '../assets/Serene Indoor Pool with Ocean View.jpg';
+// Import necessary dependencies
+import React, { useState } from 'react'; // Import the React library and the useState hook
+import { useDispatch } from 'react-redux'; // Import the useDispatch hook from the react-redux library
+import { addBookingToFirestore } from '../components/firestorereducers'; // Import the addBookingToFirestore function from the firestorereducers file
+import PayPalButton from '../components/PayPalButton'; // Import the PayPalButton component
+import dom from "../assets/Modern Luxurious Bedroom.jpg"; // Import the Modern Luxurious Bedroom image
+import bed1 from '../assets/Contemporary Elegance_ Serene Earth-Toned Bedroom.jpeg'; // Import the Contemporary Elegance image
+import bed2 from "../assets/Tranquil Elegance_ Curved Archways and Muted Green Hues.jpeg"; // Import the Tranquil Elegance image
+import bed3 from '../assets/Sunset Serenity at the Tropical Beachfront Lounge (1).jpeg'; // Import the Sunset Serenity image
+import bed4 from '../assets/Luxurious Oceanview Interior at Sunset.jpeg'; // Import the Luxurious Oceanview image
+import bed5 from '../assets/Modern Bedroom Interior.jpeg'; // Import the Modern Bedroom image
+import bed6 from '../assets/Serene Indoor Pool with Ocean View.jpg'; // Import the Serene Indoor Pool image
 import '../App.css'; // Import the CSS file
 
-function Rooms () {
+// Define the Rooms component
+function Rooms() {
+  // Get the dispatch function from the react-redux library
   const dispatch = useDispatch();
-  const [selectedRoom, setSelectedRoom] = useState(null);
-  const [isDrawerOpen, setDrawerOpen] = useState(false); // State to control drawer visibility
 
+  // Define the state for the selected room and the drawer visibility
+  const [selectedRoom, setSelectedRoom] = useState(null); // State for the selected room
+  const [isDrawerOpen, setDrawerOpen] = useState(false); // State for the drawer visibility
+
+  // Define the handleBooking function to handle room booking
   const handleBooking = (room) => {
-    setSelectedRoom(room); 
-    setDrawerOpen(true); // Open the drawer when a room is selected
+    // Set the selected room and open the drawer
+    setSelectedRoom(room);
+    setDrawerOpen(true);
   };
 
+  // Define the handlePaymentSuccess function to handle payment success
   const handlePaymentSuccess = (details) => {
+    // Create the booking data object
     const bookingData = {
       bookitem: selectedRoom.title,
       amount: selectedRoom.price,
       isBooked: true,
       paymentDetails: details,
     };
+
+    // Dispatch the addBookingToFirestore action
     dispatch(addBookingToFirestore(bookingData));
-    setSelectedRoom(null); 
-    setDrawerOpen(false); // Close the drawer after successful payment
+
+    // Reset the selected room and close the drawer
+    setSelectedRoom(null);
+    setDrawerOpen(false);
   };
 
+  // Define the rooms array
   const rooms = [
     { title: "Express Ocean View", price: 500, img: dom },
     { title: "Coastal Breeze Room", price: 1500, img: bed1 },
@@ -43,6 +57,7 @@ function Rooms () {
     { title: "Serene Pool View", price: 800, img: bed6 },
   ];
 
+  // Return the JSX element
   return (
     <div>
       <h1 className='text-6xl text-center pb-3'>Book a Room</h1>
@@ -73,4 +88,5 @@ function Rooms () {
   );
 }
 
+// Export the Rooms component as the default export
 export default Rooms;

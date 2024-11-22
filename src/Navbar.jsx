@@ -5,7 +5,11 @@ import logo from './assets/logo.png'
 function Navbar() { // Capitalized component name
   return (
     <nav className='nav'>
-        <img className='h-10 rounded-sm mr-10' src={logo}></img>
+        <img
+          className="h-20 w-40  rounded-sm mr-10 object-contain object-center shadow-md"
+          src={logo}
+          alt="Logo"
+        />
       <ul className='list'>
         <li>
           <Link to="/">About</Link> {/* Use Link for navigation */}
@@ -26,6 +30,13 @@ function Navbar() { // Capitalized component name
         </Link>
        
       </ul>
+      <Link to ="/register">
+        <button className='bg-red-500 text-white px-3 py-1 rounded ml-32'>
+          
+          Log out
+
+        </button>
+        </Link>
     </nav>
   );
 }

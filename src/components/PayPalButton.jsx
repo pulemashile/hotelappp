@@ -1,7 +1,7 @@
 // PayPalButton.js
 import React from 'react';
 import { PayPalButtons } from '@paypal/react-paypal-js';
-
+//functional component for the PayPal button
 function PayPalButton({ amount, onPaymentSuccess }) {
   return (
     <div>
@@ -17,6 +17,7 @@ function PayPalButton({ amount, onPaymentSuccess }) {
             ],
           });
         }}
+        //handling the payment method
         onApprove={(data, actions) => {
           return actions.order.capture().then((details) => {
             onPaymentSuccess(details);

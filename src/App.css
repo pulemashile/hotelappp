@@ -1,158 +1,128 @@
-*{
-  box-sizing: border-box;
-}
 
-body{
-  margin: 0;
-  padding:0;
+.container{
+  height: calc(100vh - 60px);
   width: 100%;
+  margin-top: 5.5rem;
+  margin-bottom: -5.5rem;
 }
 
-a{
-  color: #e0e0e0;
-  text-decoration: none;
-  padding-top: 5px;
-}
-
-.nav{
-  color:white;
+.wrapper{
+  height: 100%;
+  width: 85%;
+  margin: 0 auto;
   display: flex;
-  justify-content: space-around;
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
+  justify-content: center;
+  gap: 15rem;
+}
 
+.title{
+  color: #f00;
+  font-size: 46px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  white-space: nowrap;
+}
+
+.firstMsg{
+  margin-bottom: 24px;
+  font-size: 32px;
+}
+
+.firstMsg > span{
+  color: #f00;
+  font-weight: bold;
+  font-size: 26px;
+}
+
+.secondMsg{
+  font-size: 26px;
+}
+
+.secondMsg > span{
+  font-weight: bold;
+  color: rgb(221, 33, 33);
+}
+
+.desc{
+  color: #555;
+  font-size: 18px;
+  font-weight: 300;
+  margin-top: 50px;
+  max-width: 350px;
+  line-height: 30px;
+}
+
+.buttons{
+  margin-top: 4rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.buttons > button{
+  outline: none;
+  border: 1px solid transparent;
+  padding: 0.5rem 1.25rem;
+  color: #fff;
+  background-color: #f00;
+  border-radius: 8px;
+  font-size: 18px;
+  transition: 150ms all;
+  cursor: pointer;
+}
+
+.buttons>button:hover{
+  border-color: #f00;
+  background-color: #fff;
+  color: #f00;
+}
+
+.buttonSee > a{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: inherit;
+}
+
+
+/* left */
+.left{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 2rem;
+}
+
+/* right */
+.right{
+ flex: 1;
+}
+
+.manEatingImg{
+  height: 40%;
+  width: 100%;
+  object-fit: cover;
 }
 .list{
-  display: flex;
-  gap: 50px;
-  list-style: none;
-}
-
-.btnn{
-  background-color: bisque;
-  border: 2px solid;
-  padding: 5px;
-  border-radius: 50% ;
-  width: 60px;
-  height: 60px;
-}
-.btn img
-{
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-}
-
-.hero-section{
-  background: url('https://assets.lummi.ai/assets/QmWac8keANEFsA6iGvMDsFQKDxXpmFxREuTTFX4Q7q72vM?auto=format&w=1500'
-  );
-  height: 90dvh;
-  background-size: cover;
-  width: 100dvw;
-}
-.rectangle {
-  position: absolute;
-  bottom: 20px; /* Adjust spacing from the bottom */
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: black; /* Set background to black */
-  color: white; /* Set text color to white for contrast */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  padding: 20px;
-  border-radius: 10px;
-  width: 50%;
-  text-align: center;
-  
-}
-
-.box{
-  height: 90px;
-  width:80%;
-  border-radius: 15px;
+  margin-top: 1rem;
   display: flex;
   flex-direction: row;
-  gap: 30px;
+  gap: 15rem;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 300;
+  color: #555;
+  margin-left: 40px;
 
-}
-.box1{
-  background-color:#E3D5CA;
-  width: 10rem;
-
-}
-.box2{
-  background-color: #E3D5CA;
-  width: 10rem;
-}
-.box3{
-  background-color: #E3D5CA;
-  width: 10rem;
-}
-.box4{
-  background-color: #A47148;
-  width: 10rem;
-}
-.brown{
-  background-color: #E3D5CA;
   
-  height: 100%;
-  width:  100svw; 
-  padding-block: 500px;
 }
-.brown img {
-  
- width: 100vw;
-  height: 90dvh;
-  
-
+h1{
+  color: #f00;
+  font-size: 50px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  white-space: nowrap;
 }
-.card {
-  border: 1px solid #e0e0e0; /* Light border color */
-  border-radius: 0.5rem; /* Rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  transition: transform 0.3s; /* Smooth hover effect */
-}
-
-.card:hover {
-  transform: scale(1.05); /* Slightly enlarge the card on hover */
-}
-
-.card-img-top {
-  border-radius: 0.5rem 0.5rem 0 0; /* Rounded corners for the top image */
-}
-/* Style for the drawer */
-.drawer {
-  position: fixed;
-  top: 0;
-  right: -100%;
-  width: 400px;
-  height: 100%;
-  background-color: #f4f4f4;
-  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
-  transition: right 0.3s ease;
-  z-index: 1000;
-}
-
-.drawer.open {
-  right: 0; /* Slide the drawer in */
-}
-
-.drawer-content {
-  padding: 20px;
-}
-
-.close-btn {
-  background-color: #ff6347;
-  border: none;
-  color: white;
-  padding: 10px 15px;
-  cursor: pointer;
-  border-radius: 5px;
-  margin-top: 20px;
-}
-
-.close-btn:hover {
-  background-color: #ff4500;
-}
-
